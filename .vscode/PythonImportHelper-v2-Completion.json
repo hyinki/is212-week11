@@ -1,0 +1,157 @@
+[
+    {
+        "label": "unittest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unittest",
+        "description": "unittest",
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "OrderProcessor",
+        "importPath": "ex1_smelly",
+        "description": "ex1_smelly",
+        "isExtraImport": true,
+        "detail": "ex1_smelly",
+        "documentation": {}
+    },
+    {
+        "label": "Shape",
+        "importPath": "ex2_smelly",
+        "description": "ex2_smelly",
+        "isExtraImport": true,
+        "detail": "ex2_smelly",
+        "documentation": {}
+    },
+    {
+        "label": "Clothing",
+        "importPath": "ex3_smelly",
+        "description": "ex3_smelly",
+        "isExtraImport": true,
+        "detail": "ex3_smelly",
+        "documentation": {}
+    },
+    {
+        "label": "Electronics",
+        "importPath": "ex3_smelly",
+        "description": "ex3_smelly",
+        "isExtraImport": true,
+        "detail": "ex3_smelly",
+        "documentation": {}
+    },
+    {
+        "label": "Grocery",
+        "importPath": "ex3_smelly",
+        "description": "ex3_smelly",
+        "isExtraImport": true,
+        "detail": "ex3_smelly",
+        "documentation": {}
+    },
+    {
+        "label": "OrderProcessor",
+        "kind": 6,
+        "importPath": "ex1.ex1_smelly",
+        "description": "ex1.ex1_smelly",
+        "peekOfCode": "class OrderProcessor:\n    def process_order(self, order):\n        self._validate_order(order)\n        total_price = self._calculate_total_price(order)\n        total_price = self._apply_discount(order, total_price)\n        self._update_inventory(order)\n        receipt = self._generate_receipt(order, total_price)\n        self._send_confirmation_email(order[\"customer_id\"], receipt)\n        return receipt\n    def _validate_order(self, order):",
+        "detail": "ex1.ex1_smelly",
+        "documentation": {}
+    },
+    {
+        "label": "TestOrderProcessor",
+        "kind": 6,
+        "importPath": "ex1.ex1_unit_tests",
+        "description": "ex1.ex1_unit_tests",
+        "peekOfCode": "class TestOrderProcessor(unittest.TestCase):\n    def setUp(self):\n        self.processor = OrderProcessor()\n    def test_process_order_without_customer_id(self):\n        order = {\n            \"items\": [{\"id\": 1, \"name\": \"Widget\", \"price\": 20.0, \"quantity\": 2}]\n        }\n        with self.assertRaises(ValueError):\n            self.processor.process_order(order)\n    def test_process_order_without_items(self):",
+        "detail": "ex1.ex1_unit_tests",
+        "documentation": {}
+    },
+    {
+        "label": "Shape",
+        "kind": 6,
+        "importPath": "ex2.ex2_smelly",
+        "description": "ex2.ex2_smelly",
+        "peekOfCode": "class Shape:\n    def calculate_area(self, shape_type, **kwargs):\n        if shape_type == 'circle':\n            radius = kwargs.get('radius')\n            return 3.14 * radius * radius\n        elif shape_type == 'rectangle':\n            length = kwargs.get('length')\n            width = kwargs.get('width')\n            return length * width\n        elif shape_type == 'triangle':",
+        "detail": "ex2.ex2_smelly",
+        "documentation": {}
+    },
+    {
+        "label": "TestShape",
+        "kind": 6,
+        "importPath": "ex2.ex2_unit_tests",
+        "description": "ex2.ex2_unit_tests",
+        "peekOfCode": "class TestShape(unittest.TestCase):\n    def test_calculate_area_circle(self):\n        # Test for a circle with radius 5\n        result = Shape().calculate_area('circle', radius=5)\n        self.assertAlmostEqual(result, 78.5, places=2)\n    def test_calculate_area_rectangle(self):\n        # Test for a rectangle with length 4 and width 6\n        result = Shape().calculate_area('rectangle', length=4, width=6)\n        self.assertEqual(result, 24)\n    def test_calculate_area_triangle(self):",
+        "detail": "ex2.ex2_unit_tests",
+        "documentation": {}
+    },
+    {
+        "label": "Electronics",
+        "kind": 6,
+        "importPath": "ex3.ex3_smelly",
+        "description": "ex3.ex3_smelly",
+        "peekOfCode": "class Electronics:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n    def apply_discount(self):\n        discount = 0.10  # 10% discount\n        discounted_price = self.price - (self.price * discount)\n        print(f\"Discounted price for {self.name} (Electronics): {discounted_price}\")\n        return discounted_price\n    def calculate_tax(self):",
+        "detail": "ex3.ex3_smelly",
+        "documentation": {}
+    },
+    {
+        "label": "Clothing",
+        "kind": 6,
+        "importPath": "ex3.ex3_smelly",
+        "description": "ex3.ex3_smelly",
+        "peekOfCode": "class Clothing:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n    def apply_discount(self):\n        discount = 0.20  # 20% discount\n        discounted_price = self.price - (self.price * discount)\n        print(f\"Discounted price for {self.name} (Clothing): {discounted_price}\")\n        return discounted_price\n    def calculate_tax(self):",
+        "detail": "ex3.ex3_smelly",
+        "documentation": {}
+    },
+    {
+        "label": "Grocery",
+        "kind": 6,
+        "importPath": "ex3.ex3_smelly",
+        "description": "ex3.ex3_smelly",
+        "peekOfCode": "class Grocery:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n    def apply_discount(self):\n        discount = 0.05  # 5% discount\n        discounted_price = self.price - (self.price * discount)\n        print(f\"Discounted price for {self.name} (Grocery): {discounted_price}\")\n        return discounted_price\n    def calculate_tax(self):",
+        "detail": "ex3.ex3_smelly",
+        "documentation": {}
+    },
+    {
+        "label": "TestElectronics",
+        "kind": 6,
+        "importPath": "ex3.ex3_unit_tests",
+        "description": "ex3.ex3_unit_tests",
+        "peekOfCode": "class TestElectronics(unittest.TestCase):\n    def setUp(self):\n        self.electronic_item = Electronics(\"Laptop\", 1000)\n    @patch('builtins.print')\n    def test_apply_discount(self, mock_print):\n        # Expected discount price for Electronics (10% off of 1000)\n        expected_price = 1000 - (1000 * 0.10)\n        self.assertAlmostEqual(self.electronic_item.apply_discount(), expected_price, places=2)\n        mock_print.assert_any_call(\"Discounted price for Laptop (Electronics): 900.0\")\n    @patch('builtins.print')",
+        "detail": "ex3.ex3_unit_tests",
+        "documentation": {}
+    },
+    {
+        "label": "TestClothing",
+        "kind": 6,
+        "importPath": "ex3.ex3_unit_tests",
+        "description": "ex3.ex3_unit_tests",
+        "peekOfCode": "class TestClothing(unittest.TestCase):\n    def setUp(self):\n        self.clothing_item = Clothing(\"Shirt\", 50)\n    @patch('builtins.print')\n    def test_apply_discount(self, mock_print):\n        # Expected discount price for Clothing (20% off of 50)\n        expected_price = 50 - (50 * 0.20)\n        self.assertAlmostEqual(self.clothing_item.apply_discount(), expected_price, places=2)\n        mock_print.assert_any_call(\"Discounted price for Shirt (Clothing): 40.0\")\n    @patch('builtins.print')",
+        "detail": "ex3.ex3_unit_tests",
+        "documentation": {}
+    },
+    {
+        "label": "TestGrocery",
+        "kind": 6,
+        "importPath": "ex3.ex3_unit_tests",
+        "description": "ex3.ex3_unit_tests",
+        "peekOfCode": "class TestGrocery(unittest.TestCase):\n    def setUp(self):\n        self.grocery_item = Grocery(\"Milk\", 10)\n    @patch('builtins.print')\n    def test_apply_discount(self, mock_print):\n        # Expected discount price for Grocery (5% off of 10)\n        expected_price = 10 - (10 * 0.05)\n        self.assertAlmostEqual(self.grocery_item.apply_discount(), expected_price, places=2)\n        mock_print.assert_any_call(\"Discounted price for Milk (Grocery): 9.5\")\n    @patch('builtins.print')",
+        "detail": "ex3.ex3_unit_tests",
+        "documentation": {}
+    }
+]
